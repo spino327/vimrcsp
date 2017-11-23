@@ -6,6 +6,7 @@ syntax on
 set number
 set printoptions=number:y
 set mouse=a
+let g:NERDTreeWinPos = "left"
 
 "----------------------------------------
 " Omni completion
