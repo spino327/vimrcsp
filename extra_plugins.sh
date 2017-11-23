@@ -19,6 +19,8 @@ function process() {
   if [ -n "$fnc" ]; then
     $fnc
   fi
+
+  echo ""
 }
 
 # git clone https://github.com/vim-scripts/WebAPI.vim.git sources_non_forked/WebAPI
@@ -32,7 +34,7 @@ function ycm_install() {
   ./install.sh --clang-completer
   cd $BASE
 }
-#process "sources_non_forked/YouCompleteMe" "git clone https://github.com/Valloric/YouCompleteMe.git" "ycm_install"
+process "sources_non_forked/YouCompleteMe" "git clone https://github.com/Valloric/YouCompleteMe.git" "ycm_install"
 
 # Lisp
 # git clone https://github.com/kovisoft/slimv.git sources_non_forked/slimv
