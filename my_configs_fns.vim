@@ -74,3 +74,33 @@ function! UTogglePymodeMappings()
     echo "Registering pymode mappings"
   endif
 endfunction
+
+" Scala functions
+function! ULoadScalaRC()
+  let cfg = UFindConf('scala.rc', '')
+  " findfile(\"scala.rc\", \".;\")
+  if exists("l:cfg") && cfg != ""
+    echo "Loading '"cfg"'..."
+   
+    let more_args = ""
+    for line in readfile(cfg, '')
+      let more_args = more_args.line.' '
+    endfor
+    echo "more_args:'"more_args"'"
+    let b:syntastic_scala_fsc_args =
+      \ get(g:, 'syntastic_scala_fsc_args', '') .
+      \ more_args
+  else
+    echo "'scala.rc not found'"
+  endif
+endfunction
+
+function! UToggleScala()
+  call ULoadScalaRC() 
+endfunction
+
+" Utility
+function! UFindConf(what, where)
+  let cfg = findfile(a:what, escape(a:where, ' ') . ';')
+  return cfg !=# '' ? cfg : ''
+endfunction

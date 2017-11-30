@@ -26,7 +26,7 @@ function! SyntaxCheckers_scala_fsc_GetLocList() dict
     " that's why we better pass an absolute path
     let buf = bufnr('')
     let makeprg = self.makeprgBuild({
-        \ 'args': '-Ystop-after:parser',
+        \ 'args': '-Ystop-before:jvm',
         \ 'fname': syntastic#util#shescape(fnamemodify(bufname(buf), ':p')) })
 
     let errorformat =

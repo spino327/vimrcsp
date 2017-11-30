@@ -60,6 +60,7 @@ let g:Tex_MultipleCompileFormats="dvi,pdf"
 " syntastics
 "----------------------------------------
 let g:syntastic_tex_checkers = ['lacheck', 'chktex', 'proselint']
+let g:syntastic_scala_checkers = ['fsc', 'scalastyle']
 
 "----------------------------------------
 "----------------------------------------
@@ -101,6 +102,7 @@ autocmd BufRead *.java call UToggleEclimMappings()
 "----------------------------------------
 " Scala
 "----------------------------------------
+autocmd BufRead *.scala call UToggleScala()
 
 "----------------------------------------
 " Ultisnips
