@@ -84,7 +84,7 @@ function! ULoadScalaRC()
    
     let more_args = ""
     for line in readfile(cfg, '')
-      let more_args = more_args.line.' '
+      let more_args = more_args.line
     endfor
     echo "more_args:'"more_args"'"
     let b:syntastic_scala_fsc_args =
