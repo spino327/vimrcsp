@@ -80,7 +80,12 @@ function! ULoadScalaRC()
   let cfg = UFindConf('scala.rc', '')
   " findfile(\"scala.rc\", \".;\")
   if exists("l:cfg") && cfg != ""
-    let more_args = ""
+    let binfolder = finddir('bin')
+    if binfolder ==# ''
+      echo "mkdir bin"
+      call mkdir('bin')
+    endif
+    let more_args = "-d bin"
     for line in readfile(cfg, '')
       let more_args = more_args.line
     endfor
