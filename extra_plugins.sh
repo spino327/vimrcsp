@@ -47,7 +47,7 @@ process "sources_non_forked/vim-latex" "git clone https://github.com/vim-latex/v
 
 # Python
 # git clone https://github.com/python-mode/python-mode sources_non_forked/python-mode
-process "sources_non_forked/python-mode" "git clone https://github.com/python-mode/python-mode"
+process "sources_non_forked/python-mode" "git clone --recursive https://github.com/python-mode/python-mode"
 
 # Ultisnips
 # git clone https://github.com/sirver/ultisnips sources_non_forked/ultisnips
