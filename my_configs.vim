@@ -96,7 +96,8 @@ autocmd BufRead *.py call UTogglePymodeMappings()
 " Java - Eclim
 "----------------------------------------
 let g:EclimCompletionMethod = 'omnifunc'
-autocmd BufRead *.java call UToggleEclimMappings()
+" autocmd BufRead *.java call UToggleEclimMappings()
+" autocmd BufRead *.java call UToggleJava()
 
 
 "----------------------------------------
