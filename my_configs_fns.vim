@@ -41,6 +41,32 @@ function! UToggleYCMMappings()
   endif
 endfunction
 
+" Java functions
+" function! ULoadJavaRC()
+"   let cfg = UFindConf('java.rc', '')
+"   if exists("l:cfg") && cfg != ""
+"     let binfolder = finddir('bin')
+"     if binfolder ==# ''
+"       echo "mkdir bin"
+"       call mkdir('bin')
+"     endif
+"     let more_args = "-d bin"
+"     for line in readfile(cfg, '')
+"       let more_args = more_args.line
+"     endfor
+"     echo "Loaded conf: '".cfg."' => '".more_args."'"
+"     let b:syntastic_scala_fsc_args =
+"       \ get(g:, 'syntastic_scala_fsc_args', '') .
+"       \ more_args
+"   else
+"     echo "'scala.rc not found'"
+"   endif
+" endfunction
+
+" function! UToggleScala()
+"   call ULoadScalaRC() 
+" endfunction
+
 " Mappings for Eclim
 function! UToggleEclimMappings()
   if !exists("g:u_toggle_eclim") || g:u_toggle_eclim != 1
