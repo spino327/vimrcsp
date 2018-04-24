@@ -40,7 +40,7 @@ function process() {
   update_cmd=$3
   fnc=$4
 
-  if [ "$INTERACTIVE" -eq "1" ]; then
+  if [ "$INTERACTIVE" == "1" ]; then
     read -p "Do you want to run '$1' (y/n)?" ANSWER
     if [ "$ANSWER" != "y" ]; then
       echo "Skipping..."
@@ -52,11 +52,11 @@ function process() {
 
   if [ ! -d $BASE/$target_folder ]; then
     echo "Cloning $target_folder"
-    $DRY `$clone_cmd $BASE/$target_folder`
+    $DRY $clone_cmd $BASE/$target_folder
   else
     echo "Updating $target_folder"
     $DRY cd $BASE/$target_folder
-    $DRY `$update_cmd`
+    $DRY $update_cmd
   fi
   if [ -n "$fnc" ]; then
     echo "Executing lambda function '$fnc'"
